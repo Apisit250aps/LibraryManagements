@@ -15,13 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from library_manager import views as page
-from library_manager import api
+from . import api
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', page.index, name='index'),
-    path('page/home', page.homepage, name='homepage'),
     
     
 ]
