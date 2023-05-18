@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400&amp;family=Sarabun:wght@400&amp;display=swap');
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+
+}
+
+* {
+    font-family: 'kanit';
+}
+
+@keyframes opening-form {
+    from {
+        opacity: 0%;
+        transform: translateX(500px);
+    }
+
+    to {
+        opacity: 100%;
+        transform: translateY(0px);
+    }
+
+}
+
+
+.opening {
+    animation: opening-form 1s;
+}
+
+.logo {
+    padding: 0.25rem 1.5rem;
+    background-color: orange;
+    color: white;
+    border-radius: 5rem;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+header {
+    padding-top: 1rem;
+}
+
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+}
+
+.member {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5rem;
+    padding: 0.25rem 1.5rem;
+    background-color: orange;
+    box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+.input-box {
+    height: 3.5rem;
+    width: 100%;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 0rem 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.input-box>input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 24px;
+
+
+}
+
+.filter-btn {
+    height: 3.5rem;
+    width: 100%;
+    border-radius: 1rem;
+    background-color: white;
+    border: none;
+}
+
+.col>img {
+    width: 250px;
+    height: 315px;
+}

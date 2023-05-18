@@ -1,9 +1,69 @@
 {% extends 'index.html' %}
+{% load static %}
 
 {% block content %}
+<!-- style -->
 
+<!-- end style -->
+<!-- container -->
+<div id="index" class="container pt-md-5 pt-4">
+    <h1 class="fs-1 mx-1">วันนี้จะอ่านอะไรดี?</h1>
+    <div class="pt-md-3 pt-1">
+        <form action="" class="d-flex flex-row justify-content-between align-items-center">
+            <div class="mx-1 w-100 input-box shadow-sm">
+                <input type="text" name="" id="" class="w-100" placeholder="ค้นหา...">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-search-heart" viewBox="0 0 16 16">
+                    <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
+                    <path
+                        d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
+                </svg>
+            </div>
+            <div class="mx-1">
+                <button class="filter-btn shadow-sm">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                            class="bi bi-filter" viewBox="0 0 16 16">
+                            <path
+                                d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </form>
+    </div>
+    
+    <div class="row row-cols-md-5 row-cols-1 m-auto mt-5">
+        <div v-for="items in book"  class="col m-auto">
+            <img :src="items.book_img" alt="" class="img-fluid book-img" >
+        </div>
+    </div>
+</div>
+<!-- end container -->
+<!-- script -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    const { createApp } = Vue
+    createApp({
+        delimiters: ["[[", "]]"],
+        data() {
+            return {
+                profile_img: 'https://scontent.fnak4-2.fna.fbcdn.net/v/t1.6435-9/161610854_930459957780431_1053975476520696176_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHjMhoWRANfAm9ag4r0OPUDF9DHUda85WYX0MdR1rzlZvv-AcqIzDvdGDzacRExz2thWC_ded4CHCl88KaEL550&_nc_ohc=J10PbO7-TxQAX_4Ojic&_nc_ht=scontent.fnak4-2.fna&oh=00_AfCq_wEmiY6Uri7-K7q0RDouJidK2YSKDNgJSgmq9XFsHw&oe=64871853',
+                name: 'Apisit Saithong',
+                address: 'Sisaket',
+                book:null
+            }
+        },
+        async mounted(){
+            axios
+                .get("{% url 'all_book' %}")
+                .then((response)=>{
+                    this.book = response.data
+                })
+        }
 
-
-
-
-{% endblock %}
+    }).mount('#index')
+</script>
+<!-- end script -->
+{% endblock content %}

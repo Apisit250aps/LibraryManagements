@@ -1,0 +1,128 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<!-- style -->
+
+<!-- end style -->
+<!-- container -->
+<section id="index" class="m-auto mt-5">
+    <form action="" class="row row-cols-1 m-auto py-5 border rounded shadow opening">
+        <div class="col">
+            <h2>สมัครสมาชิก</h2>
+            <hr>
+            <div class="row row-cols-1 row-cols-md-2 m-auto my-1">
+                <div class="col">
+                    <label for="fname" class="form-label">ชื่อ</label>
+                    <input type="text" class="form-control " id="fname" value="" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="lname" class="form-label">นามสกุล</label>
+                    <input type="text" class="form-control " id="lname" value="" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 m-auto my-1">
+                <div class="col">
+                    <label for="username" class="form-label">ชื่อผู้ใช้</label>
+                    <input type="text" class="form-control " id="username" value="" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="email" class="form-label">อีเมล</label>
+                    <input type="email" class="form-control " id="email" value="" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 m-auto my-1">
+                <div class="col">
+                    <label for="password" class="form-label">กำหนดรหัสผ่าน</label>
+                    <input type="password" class="form-control " id="password" value="" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="confirm" class="form-label">ยืนยันรหัสผ่าน</label>
+                    <input type="password" class="form-control " id="confirm" value="" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="mx-auto w-75 my-3">
+        <div class="col row row-cols-1 row-cols-md-2 m-auto">
+            <div class="col row row-cols-1">
+                <div class="col">
+                    <label for="validationServer04" class="form-label">State</label>
+                    <select class="form-select is-invalid" id="validationServer04"
+                        aria-describedby="validationServer04Feedback" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>...</option>
+                    </select>
+                    <div id="validationServer04Feedback" class="invalid-feedback">
+                        Please select a valid state.
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="validationServer04" class="form-label">State</label>
+                    <select class="form-select is-invalid" id="validationServer04"
+                        aria-describedby="validationServer04Feedback" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>...</option>
+                    </select>
+                    <div id="validationServer04Feedback" class="invalid-feedback">
+                        Please select a valid state.
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="validationServer04" class="form-label">State</label>
+                    <select class="form-select is-invalid" id="validationServer04"
+                        aria-describedby="validationServer04Feedback" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>...</option>
+                    </select>
+                    <div id="validationServer04Feedback" class="invalid-feedback">
+                        Please select a valid state.
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="validationServer04" class="form-label">State</label>
+                    <textarea name="" id="" cols="30" rows="3" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="col">
+                
+            </div>
+        </div>
+    </form>
+</section>
+<!-- end container -->
+<!-- script -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    const { createApp } = Vue
+    createApp({
+        delimiters: ["[[", "]]"],
+        data() {
+            return {
+                profile_img: 'https://scontent.fnak4-2.fna.fbcdn.net/v/t1.6435-9/161610854_930459957780431_1053975476520696176_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHjMhoWRANfAm9ag4r0OPUDF9DHUda85WYX0MdR1rzlZvv-AcqIzDvdGDzacRExz2thWC_ded4CHCl88KaEL550&_nc_ohc=J10PbO7-TxQAX_4Ojic&_nc_ht=scontent.fnak4-2.fna&oh=00_AfCq_wEmiY6Uri7-K7q0RDouJidK2YSKDNgJSgmq9XFsHw&oe=64871853',
+                name: 'Apisit Saithong',
+                address: 'Sisaket'
+
+            }
+        }
+    }).mount('#index')
+</script>
+<!-- end script -->
+{% endblock content %}

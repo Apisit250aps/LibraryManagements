@@ -8,7 +8,6 @@ class Category(models.Model):
     cats_icon = models.ImageField(upload_to='media/categoryIcon')
 
 
-
 class Book(models.Model):
     title = models.CharField(max_length=255, unique=True)
     author = models.CharField(max_length=255)
@@ -17,7 +16,7 @@ class Book(models.Model):
     category = models.CharField(max_length=128)
     quantity = models.IntegerField()
     import_date = models.DateField(auto_now_add=True)
-    book_img = models.ImageField(upload_to='media/books')
+    book_img = models.ImageField(upload_to='books')
 
     def __str__(self):
         return self.title
@@ -26,11 +25,15 @@ class Book(models.Model):
 class Member(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     phone = models.CharField(max_length=10)
+    national_id = models.CharField(max_length=13)
     province = models.CharField(max_length=128)
     district = models.CharField(max_length=128)
     subDistrict = models.CharField(max_length=128)
     detail = models.TextField(max_length=512)
-
+    birth_of_date = models.DateField()
+    
+    def __str__(self):
+        return f"{self.user.first_name} {self.user.last_name}"
 
 BORROWING_STATUS = [
     ("BR", "Borrowing"),

@@ -10,13 +10,20 @@
     <title>Library</title>
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
     <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
 
 </head>
 
-<body>
-    {% block content %}
-
-    {% endblock %}
+<body class="bg-light container h-100 w-100">
+    <header class="">
+        <nav class="container" id="header">
+            <div class="logo">
+                <h1>Library</h1>
+            </div>
+        </nav>
+    </header>
+    {% block content %}{% endblock content %}
     <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 </body>
 

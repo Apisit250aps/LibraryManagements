@@ -7,7 +7,9 @@ from . import models
 class Book(admin.ModelAdmin):
     list_display = [
         'title',
-        'author'
+        'author',
+        'category',
+        'import_date'
     ]
 
 
@@ -16,5 +18,15 @@ class Book(admin.ModelAdmin):
 class Member(admin.ModelAdmin):
     list_display = [
         'user'
+    ]
+
+
+@admin.register(models.Borrowing)
+class Borrowing(admin.ModelAdmin):
+    list_display = [
+        'book',
+        'member',
+        'borrowing_date',
+        'borrowing_status'
     ]
 
